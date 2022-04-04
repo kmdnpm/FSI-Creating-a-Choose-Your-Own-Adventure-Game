@@ -1,41 +1,40 @@
-let optionA;
-let optionA1 = "follow";
-let optionA2 = "progress";
+let optionA, optionB;
+
 
 firstChoice(optionA);
 
-if (optionA === "left"){
+if (firstChoice(optionA) === "left"){
+
     window.prompt(`You come across a stray cat. 
     It scampers off down a small hole, just large enough for you to crawl through. 
     Do you follow it, or continue on your path?`)
     left();
 
-    if(optionA1){
+    if(left(optionB) === "follow"){
         follow();
     }
-    else if(optionB1){
+    else if(left(optionB) === "continue"){
         progress();
     }
 
-
 }
 
-if (optionB1 === "right"){
-    window.prompt(`You come across a stray cat. 
-    It scampers off down a small hole, just large enough for you to crawl through. 
-    Do you follow it, or continue on your path?`)
-    left();
+else if (firstChoice(optionA) === "right"){
 
-    if(optionA1){
-        follow();
-    }
-    else if(optionB1){
-        progress();
-    }
+    window.prompt(`You come across a snoring dragon. 
+    On the other side of him, you see a shiny chest of treasure. Another path would 
+    lead you away from the dragon altogether. Which path do you take?`)
+    
+    right();
 
+    if(right(optionB) === "past the dragon"){
+        pastDragon();
+    }
+    else if(left(optionB) === "away from the dragon"){
+        awayFromDragon();
+    }
 
 }
-
 
 
 function firstChoice(option){
